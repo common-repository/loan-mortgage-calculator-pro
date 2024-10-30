@@ -1,0 +1,289 @@
+/*
+ * Calculator css
+ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
+
+::-webkit-datetime-edit { padding: 1em; }
+/*::-webkit-datetime-edit-fields-wrapper { background: silver; }*/
+::-webkit-datetime-edit-text { color: #333; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: #333; }
+::-webkit-datetime-edit-day-field { color: #333; }
+::-webkit-datetime-edit-year-field { color: #333; }
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { border: 1px solid #333; }
+::-webkit-clear-button {padding-right: 5px;}
+
+.result-inp{
+	position: relative;
+	margin-bottom: 10px;
+}
+.result-inp .calc-placeholder{
+    padding: 7px;
+    color: #5f5f5f;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.row-calc {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.calc-md-3{
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding-left:15px;
+  padding-right:15px;
+  box-sizing:border-box;
+}
+
+.calc-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-left:15px;
+    padding-right:15px;
+    box-sizing:border-box;
+}
+.calc-form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 10px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.calc-form-group {position: relative;}
+
+.tooltip-calc {
+  position: relative;
+}
+
+.tooltip-calc .tooltiptext-calc {
+  visibility: hidden;
+  max-width:250px;
+  padding:10px;
+  box-sizing:border-box;
+  background-color: #555;
+  color: #fff;
+  font-size:11px;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 0%;
+  
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-calc .tooltiptext-calc::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip-calc:hover .tooltiptext-calc {
+  visibility: visible;
+  opacity: 1;
+}
+.cl-text-center {text-align: center !important;}
+#lmcp_calc_form h5, .calc-results h5, .daily-min h5, .Amortization h5 {font-size:18px; color:#4c4c4c; font-weight:400; font-family: 'Montserrat', sans-serif !important; height:42px;}
+#lmcp_calc_form label {font-size:14px; color:#4b4b4b; font-weight:300;font-family: 'Montserrat', sans-serif !important;}
+#lmcp_calc_form input {-webkit-appearance: none; outline: 0; padding:7px 15px; box-sizing:border-box; width:100%; background-color:transparent; border:1px solid #e4e4e4; box-shadow:none; border-radius:0px; color:#686868; font-weight:300; margin-bottom:13px;}
+#lmcp_calc_form input[type="date"]{height:41px;padding:0px 15px;}
+#lmcp_calc_form input:focus {box-shadow:none;}
+#lmcp_calc_form .text-center{border-bottom:1px solid #e4e4e4; padding-bottom:38px; padding-top:20px;}
+#lmcp_calc_form #calc-btn {background-color:#1189fa;border:0px; border-radius:0px; padding-left:35px; color:#fff;  padding-right:35px;padding-top:9px; padding-bottom:9px; text-transform: uppercase; font-size:14px; font-weight:700; letter-spacing:1px;}
+#lmcp_calc_form #calc-btn:focus {box-shadow:none;}
+#lmcp_calc_form #calc-btn:hover {background-color:#3f89cf;}
+.calc-results h5 {height:auto;}
+.payoff_date, .money_saved {justify-content:space-between;}
+.payoff_date input, .money_saved input {width:100%; padding:10px 12px;height:auto; font-family: 'Montserrat', sans-serif !important;font-weight:300; font-size:14px; background-color:#ebebeb !important; border:0px; box-shadow:none; border-radius:0px; color:#686868;}
+.payoff_date input:focus, .money_saved input:focus {box-shadow:none;}
+.calc-results .calc-placeholder {color:#686868; font-size:14px;padding-right:12px !important; padding-top:10px !important; font-family: 'Montserrat', sans-serif !important;font-weight:300; }
+.money_saved_min {padding-top:10px;}
+.payoff_date_min {padding-top:14px;}
+.daily-min h5, .Amortization h5 {height:auto;}
+.daily-min h5 {padding-top:7px;}
+.Amortization h5 {padding-top:12px;}
+.daily-min table, .Amortization table {margin-top:25px;}
+.calc-table table {-webkit-box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.10);
+-moz-box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.10);
+box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.10);
+width:100%;
+}
+.calc-table table th {padding:1.41575em !important; background-color:transparent!important; font-weight:600; font-size:13px;font-family: 'Montserrat', sans-serif !important;}
+/*table#daily-tabular th {padding:10px 11px!important;}*/
+.calc-table table tbody tr:nth-child(1){display: none!important;}
+.calc-table table#daily-tabular td, table#amort-tabular td {padding:14px 20px !important; font-size:14px; color:#647485!important;font-family: 'Montserrat', sans-serif !important;}
+.calc-table table tbody td {background-color:transparent!important;}
+.calc-table table tbody tr:nth-child(even) {background: #f9f9f9}
+.calc-table table tbody tr:nth-child(odd) {background: #FFF}
+.calc-table table thead th:hover, table thead th:focus{background-color:#fff !important;}
+.calc-load-more a { width:153px; margin:0px auto; background-color:#1189fa; font-size:14px; text-transform: uppercase; border-radius:0px; padding-left:35px; padding-right:35px;padding-top:10px; padding-bottom:10px; text-transform: uppercase; font-size:13px; font-weight:700; color:#fff;}
+.calc-load-more a:hover {color:#fff;text-decoration: none; background-color:#3f89cf;}
+.calc-table .tab {display: none;}
+.calc-table td:hover::after, th:hover::after {background-color:#fff !important;}
+.calc-load-more {margin-top:40px;}
+.calc-table tbody tr:hover{background-color:#eff7ff!important;}
+@media (max-width:968px) {
+  .calc-results .calc-placeholder, .payoff_date input, .money_saved input {font-size:12px;}
+  #daily {overflow-x:scroll;}
+}
+@media (max-width:850px) {
+  #lmcp_calc_form h5 {height:auto;}
+  .calc-results .calc-placeholder, .payoff_date input, .money_saved input {font-size:11px;}
+  #amort {overflow-x:scroll;}
+  .calc-md-3, .calc-md-4{
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
+}
+@media screen and (max-width: 540px) {
+	.result-inp input{
+		margin-bottom: 0px;
+		text-align: center;
+	}
+	.result-inp .calc-placeholder{
+    	padding: 2px 0px 12px;
+		position: inherit;
+	    color: #5f5f5f;
+	    text-align: center;
+	    font-size: 12px;
+	}
+}
+
+.calc-table table#daily-tabular th{
+	padding:2px 3px;
+	text-align: center;
+}
+.calc-table table#daily-tabular td{
+	padding:5px 20px;
+}
+
+/*table effects*/
+body:not(.nohover) .calc-table tbody tr:hover {
+  background-color: #ffa;
+}
+
+.calc-table td:hover::after,
+.calc-table thead th:not(:empty):hover::after,
+.calc-table td:focus::after,
+.calc-table thead th:not(:empty):focus::after { 
+  content: '';  
+  height: 10000px;
+  left: 0;
+  position: absolute;  
+  top: -5000px;
+  width: 100%;
+  z-index: -1;
+}
+
+.calc-table td:hover::after,
+.calc-table th:hover::after {
+  background-color: #ffa;
+}
+
+.calc-table td:focus::after,
+.calc-table th:focus::after {
+  background-color: lightblue;
+}
+
+/* Focus stuff for mobile */
+.calc-table td:focus::before,
+.calc-table tbody th:focus::before {
+  background-color: lightblue;
+  content: '';  
+  height: 100%;
+  top: 0;
+  left: -5000px;
+  position: absolute;  
+  width: 10000px;
+  z-index: -1;
+}
+
+
+.calc-table table {
+  overflow: hidden;
+}
+
+.calc-table td, .calc-table th {
+  position: relative;
+  outline: 0;
+}
+
+
+/* Style the tab */
+.calc-table .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.calc-table .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.calc-table .tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.calc-table .calc-table .tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.row.calc-results{
+  margin-bottom: 10px;
+}
+
+button.tablinks{
+  width: 50%;
+}
+
+.calc-table tr { display:none; }
+
+.calc-table tr:nth-child(1), .calc-table tr:nth-child(2), .calc-table tr:nth-child(3), .calc-table tr:nth-child(4), .calc-table tr:nth-child(5), .calc-table tr:nth-child(6)  { display:table-row; }
+
+.calc-load-more a:focus{
+  outline: none;
+}
